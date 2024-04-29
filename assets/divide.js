@@ -6,14 +6,19 @@ const option1 = document.getElementById("option1"),
 let answer = 0;
 
 function generate_equation(){ 
-  let num1 = Math.floor(Math.random() * 13),
-      num2 = Math.floor(Math.random() * 13),
-      dummyAnswer1 = Math.random() * 10,
+   let num1 = Math.floor(Math.random() * 13),
+      num2 = Math.floor(Math.random() * 13);
+    while(num1 == 0 && num2 == 0){
+        num1 = Math.floor(Math.random() * 13);
+      num2 = Math.floor(Math.random() * 13);
+    }
+      let dummyAnswer1 = Math.random() * 10,
       dummyAnswer2 = Math.floor(Math.random() * 10),
       allAnswers = [],
       switchAnswers = [];
-
+    
   answer = eval(num1 / num2);
+  
   
   document.getElementById("num1").innerHTML = num1; 
   document.getElementById("num2").innerHTML = num2; 
